@@ -1,0 +1,51 @@
+ console.log("===========================================================")
+console.log("Nama       : Muhamad Dafik Kholik Firdaus")
+console.log("Nim        : 20220040146")
+console.log("Kelas      : TI22A")
+console.log("Mata Kuliah: Pemrograman Berbasis Platform")
+console.log("===========================================================")
+console.log("PEMROGRAMAN SEDERHANA MENGGUNAKAN IF,ELSE, DAN SWITCH CASE.")
+console.log("===========================================================")
+function hitungKomisiDanUangJasa(pendapatan) {
+    let uangJasa;
+    let komisi;
+
+    if (pendapatan <= 200000) {
+        uangJasa = 10000;
+        komisi = 0.10 * pendapatan;
+    } else if (pendapatan > 200000 && pendapatan <= 500000) {
+        uangJasa = 20000;
+        komisi = 0.15 * pendapatan;
+    } else if (pendapatan > 500000) {
+        uangJasa = 30000;
+        komisi = 0.20 * pendapatan;
+    }
+
+    return uangJasa + komisi;
+}
+
+function berikanKomisiDanUangJasa(pendapatan) {
+    switch (true) {
+        case (pendapatan <= 200000):
+            return 10000 + 0.10 * pendapatan;
+        case (pendapatan > 200000 && pendapatan <= 500000):
+            return 20000 + 0.15 * pendapatan;
+        case (pendapatan > 500000):
+            return 30000 + 0.20 * pendapatan;
+        default:
+            return 0;
+    }
+}
+
+// Contoh penggunaan
+let pendapatan1 = 150000; // Pendapatan Rp. 150.000
+let pendapatan2 = 300000; // Pendapatan Rp. 300.000
+let pendapatan3 = 600000; // Pendapatan Rp. 600.000
+
+console.log("Komisi dan Uang Jasa untuk pendapatan Rp. 150.000: ", hitungKomisiDanUangJasa(pendapatan1));
+console.log("Komisi dan Uang Jasa untuk pendapatan Rp. 300.000: ", hitungKomisiDanUangJasa(pendapatan2));
+console.log("Komisi dan Uang Jasa untuk pendapatan Rp. 600.000: ", hitungKomisiDanUangJasa(pendapatan3));
+
+console.log("Komisi dan Uang Jasa (switch case) untuk pendapatan Rp. 150.000: ", berikanKomisiDanUangJasa(pendapatan1));
+console.log("Komisi dan Uang Jasa (switch case) untuk pendapatan Rp. 300.000: ", berikanKomisiDanUangJasa(pendapatan2));
+console.log("Komisi dan Uang Jasa (switch case) untuk pendapatan Rp. 600.000: ", berikanKomisiDanUangJasa(pendapatan3));
